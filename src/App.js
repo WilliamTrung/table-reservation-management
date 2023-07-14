@@ -3,30 +3,23 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import LoginGoogle from './pages/login';
 import "./App.css";
 import { Component } from 'react';
-class AppTest extends Component {
+import ErrorPage from './pages/error';
+import MainPage from './pages/main';
+class App extends Component {
   render() {
     return (
       <>
-      <BrowserRouter>
-        <Routes>
+      <BrowserRouter basename='/'>
+      <h1>In BrowserRouter but not Routes</h1>
+        <Routes>          
+          <Route path='*' element={<ErrorPage/>}/>
           <Route path="/login" element={<LoginGoogle />} />
+          <Route path="/" element={<MainPage/>}/>
         </Routes>
       </BrowserRouter>
-        
       </>
     );
   }
 }
-const App = () => {
- return (
-    <>
-    <div>      
-        <Routes>
-          <Route path="/login" element={<LoginGoogle />} />
-       </Routes>
-    </div>       
-    </>
- );
-};
 
-export default AppTest;
+export default App;
