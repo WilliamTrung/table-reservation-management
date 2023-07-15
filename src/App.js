@@ -5,16 +5,17 @@ import "./App.css";
 import { Component } from 'react';
 import ErrorPage from './pages/error';
 import MainPage from './pages/main';
+import ProfileComponent from './pages/profile';
 class App extends Component {
   render() {
     return (
       <>
       <BrowserRouter basename='/'>
-      <h1>In BrowserRouter but not Routes</h1>
         <Routes>          
           <Route path='*' element={<ErrorPage/>}/>
           <Route path="/login" element={<LoginGoogle />} />
           <Route path="/" element={<MainPage/>}/>
+          <Route path='/profile' element={<ProfileComponent/>}/>
         </Routes>
       </BrowserRouter>
       </>

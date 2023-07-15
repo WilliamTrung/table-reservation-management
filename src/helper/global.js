@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import "./StringExtension";
 /* eslint-disable no-extend-native */
 Function.prototype.TokenIsNullOrEmpty = function () {
@@ -10,4 +9,5 @@ Function.prototype.TokenIsNullOrEmpty = function () {
     console.log("token is not null or empty");
     return false;
   }
-  };
+};
+
