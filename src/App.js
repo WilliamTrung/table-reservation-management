@@ -2,6 +2,7 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import LoginGoogle from './pages/login';
 import "./App.css";
+import "./Loading.css";
 import { Component } from 'react';
 import ErrorPage from './pages/error';
 import MainPage from './pages/main';

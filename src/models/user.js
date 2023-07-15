@@ -1,17 +1,18 @@
-export class User {
-    family_name = null;
-    given_name = null;
+import { USER_EMAIL, USER_FAMILYNAME, USER_GIVENNAME, USER_PICTURE } from "../constants/constants";
 
-    constructor(family_name, given_name, picture) {
+export class User {
+    constructor(email, family_name, given_name, picture) {
+        this.email = email
       this.family_name = family_name;    
       this.given_name = given_name;
       this.picture = picture;
     }
     static GetSession(){        
-        let family_name = sessionStorage.getItem('user-family_name');
-        let given_name = sessionStorage.getItem('user-given_name');
-        let picture = sessionStorage.getItem('user-picture');
-        return new User(family_name, given_name, picture);
+        let email = sessionStorage.getItem(USER_EMAIL);
+        let family_name = sessionStorage.getItem(USER_FAMILYNAME);
+        let given_name = sessionStorage.getItem(USER_GIVENNAME);
+        let picture = sessionStorage.getItem(USER_PICTURE);
+        return new User(email, family_name, given_name, picture);
     }
     getFullname(){
         return this.family_name + ' ' + this.given_name;

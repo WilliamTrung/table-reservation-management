@@ -11,8 +11,15 @@ String.prototype.TokenToUser = function () {
     try {
         const decodedToken = jwt_decode(this);
         console.log(decodedToken);
-        return new User(decodedToken.family_name, decodedToken.given_name, decodedToken.picture);
+        return new User(decodedToken.email, decodedToken.family_name, decodedToken.given_name, decodedToken.picture);
       } catch (error) {
         throw new Error(error);
     }
 };
+String.prototype.Contains = function(str){
+    if (this.toLowerCase().includes(str.toLowerCase())) {
+        return true;
+      } else {
+        return false;
+      }
+}
