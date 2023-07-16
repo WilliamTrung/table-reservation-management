@@ -16,6 +16,7 @@ class App extends Component {
           <Route path='*' element={<ErrorPage/>}/>
           <Route path="/login" element={<LoginGoogle />} />
           <Route path="/" element={<MainPage/>}/>
+          {/* <Route path="/assign-table/:reservationId" element={<VacantTables />} /> */}
           <Route path='/profile' element={<ProfileComponent/>}/>
         </Routes>
       </BrowserRouter>
