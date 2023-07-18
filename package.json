@@ -1,5 +1,6 @@
 {
   "name": "testing-client",
+  "homepage": "https://williamtrung.github.io/table-reservation-management/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3000",
