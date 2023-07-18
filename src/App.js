@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className='h-100'>
-      <BrowserRouter basename='/'>
+      <BrowserRouter basename='/table-reservation-management'>
         <NavigationBar />
         <Routes>          
           <Route path='*' element={<ErrorPage/>}/>
