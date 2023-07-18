@@ -1,0 +1,13 @@
+.selected-row {
+    background-color: #b9b9b9 !important;
+    /* Add any other styles for the selected row here */
+  }
+  .selected-row td {
+    background-color: #b9b9b9 !important;
+  }
+  table-selected {
+    background-color: #b9b9b9 !important;
+  }
+  table-selected td {
+    background-color: #b9b9b9 !important;
+  }

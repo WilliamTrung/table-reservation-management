@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.card-effect {
+  transition: box-shadow 0.3s ease;
+}
+.card-hover-effect{
+  background-color: blue;
+}
+.card-select-effect{
+  background-color: red;
+}
