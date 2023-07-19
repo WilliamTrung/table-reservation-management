@@ -23,7 +23,11 @@ const AnonymousReservationComponent = () => {
   const [page, setPage] = useState(1);
   const [selectedReservation, setSelectedReservation] = useState(null); // State for selected reservation
   const navigate = useNavigate();
-
+  useEffect(() => {
+    if (selectedReservation) {
+      handleTableSelectionCallback(); // This function triggers a callback to reload the AssignTableComponent
+    }
+  }, [selectedReservation]);
   useEffect(() => {
     fetchReservations(); // Fetch initially
     const interval = setInterval(() => {
