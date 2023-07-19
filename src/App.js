@@ -1,5 +1,5 @@
 // App.js
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, HashRouter } from 'react-router-dom';
 import LoginGoogle from './pages/login';
 import "./App.css";
 import "./Loading.css";
@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className='h-100'>
-      <BrowserRouter basename='/table-reservation-management'>
+      <HashRouter basename='/table-reservation-management'>
         <NavigationBar />
         <Routes>          
           <Route path='*' element={<ErrorPage/>}/>
@@ -36,7 +36,7 @@ class App extends Component {
           {/* <Route path="/assign-table/:reservationId" element={<VacantTables />} /> */}
           <Route path='/profile' element={<ProfileComponent/>}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <ToastContainer/>
       </div>
     );
