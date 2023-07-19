@@ -16,7 +16,7 @@ import { DEV_URL, PUBLIC_URL } from "../../constants/constants";
 import withAuthentication from "../../helper/Authentication";
 import { useNavigate } from "react-router-dom";
 import AssignTableComponent from "./assign-table"; // Import the AssignTableComponent
-
+import VacantTables from "../main/assign-table"
 const AnonymousReservationComponent = () => {
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -212,10 +212,11 @@ const AnonymousReservationComponent = () => {
       <Row id="table-select" className="h-50 mt-3">
         <Col>
           {selectedReservation ? (
-            <AssignTableComponent
-              reservation={selectedReservation} 
-              key={selectedReservation}
+            <VacantTables
               callback={handleTableSelectionCallback}
+              AssignReservation={selectedReservation}
+              key={selectedReservation}
+              onTableAssigned={handleTableSelectionCallback}
             />
           ) : (
             <Alert variant="info">
