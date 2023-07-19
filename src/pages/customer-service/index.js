@@ -4,6 +4,7 @@ import AnonymousReservationComponent from "./anonymous-list";
 import CheckinReservation from "./checkin";
 import CheckoutReservation from "./checkout";
 import { Col, Container, Row } from "react-bootstrap";
+import withAuthentication from "../../helper/Authentication";
 const CustomerComponent = () => {
   return (
     <>
@@ -19,8 +20,7 @@ const CustomerComponent = () => {
           </Col>
         </Row>
       </Container>
-      <ToastContainer />
     </>
   );
 };
-export default CustomerComponent;
+export default withAuthentication(CustomerComponent);

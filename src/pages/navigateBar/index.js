@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Image } from 'react-bootstrap';
+import { USER_GIVENNAME, USER_PICTURE } from '../../constants/constants';
 
 const NavigationBar = () => {
+  const navigate = useNavigate();
   const handleLogout = () => {
     sessionStorage.clear();
-    window.location.href = '/login';
+    navigate('/login');
   };
-
-  const userPicture = sessionStorage.getItem('user-picture');
-  const userName = sessionStorage.getItem('user-given_name');
+  useEffect(() => {
+    setPicture(sessionStorage.getItem(USER_PICTURE));
+    setName(sessionStorage.getItem(USER_GIVENNAME));
+  }, [navigate]);
+  const [userPicture, setPicture] = useState(sessionStorage.getItem(USER_PICTURE));
+  const [userName, setName] = useState(sessionStorage.getItem(USER_GIVENNAME));
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">

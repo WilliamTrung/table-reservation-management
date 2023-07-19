@@ -2,8 +2,8 @@ import React from "react";
 import CheckinReservation from "./check-in";
 import CheckoutReservation from "./check-out";
 import AssignTableToReservation from "./pending-reservation";
-import { ToastContainer } from "react-toastify";
 import { Col, Container, Row } from "react-bootstrap";
+import withAuthentication from "../../helper/Authentication";
 const Dashboard = () => {
   return (
     <div className="dashboard">
@@ -23,9 +23,8 @@ const Dashboard = () => {
           </Col>
         </Row>
       </Container>
-      <ToastContainer />
     </div>
   );
 };
 
-export default Dashboard;
+export default withAuthentication(Dashboard);

@@ -33,7 +33,7 @@ function Login() {
     <div className="App">
       <header className="App-header">
         <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-        <ToastContainer/>
+        {/* <ToastContainer/> */}
       </header>
     </div>
   );
