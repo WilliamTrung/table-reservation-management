@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/table-reservation-management/static/css/main.9a29c65f.css",
-    "main.js": "/table-reservation-management/static/js/main.407f2cb7.js",
+    "main.js": "/table-reservation-management/static/js/main.fdf111a6.js",
     "index.html": "/table-reservation-management/index.html",
     "main.9a29c65f.css.map": "/table-reservation-management/static/css/main.9a29c65f.css.map",
-    "main.407f2cb7.js.map": "/table-reservation-management/static/js/main.407f2cb7.js.map"
+    "main.fdf111a6.js.map": "/table-reservation-management/static/js/main.fdf111a6.js.map"
   },
   "entrypoints": [
     "static/css/main.9a29c65f.css",
-    "static/js/main.407f2cb7.js"
+    "static/js/main.fdf111a6.js"
   ]
 }
