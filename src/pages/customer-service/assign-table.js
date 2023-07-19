@@ -15,7 +15,7 @@ const AssignTableComponent = ({ reservation, onReservationAssigned }) => {
 
   useEffect(() => {
     fetchVacantTables();
-  }, []);
+  }, [reservation]);
 
   const fetchVacantTables = async () => {
     try {
