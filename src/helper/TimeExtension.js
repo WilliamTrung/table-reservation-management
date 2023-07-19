@@ -5,11 +5,11 @@ const ConvertTime = ({ passedtime }) => {
   // Convert the hours and minutes to numbers
   let hours24Hour = parseInt(hours);
   const minutesNum = parseInt(minutes);
-  hours24Hour += 7;
   // Adjust the hours for PM time
 
+  hours24Hour += 7;
   if (period === "PM" && hours24Hour !== 12) {
-    hours24Hour += 19;
+    hours24Hour += 12;
   } 
 
   // Format the time in 24-hour format (e.g., "4:00 PM" to "16:00")

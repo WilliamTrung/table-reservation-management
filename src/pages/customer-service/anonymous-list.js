@@ -119,7 +119,7 @@ const AnonymousReservationComponent = () => {
           <LoadingPage />
         ) : reservations.length > 0 ? (
           <Col lg={12}>
-            <Table striped bordered hover>
+            <Table bordered hover>
               <thead>
                 <tr>
                   <th>Phone</th>
@@ -142,7 +142,7 @@ const AnonymousReservationComponent = () => {
                       key={reservation.id}
                       className={
                         selectedReservation?.id === reservation.id
-                          ? "selected"
+                          ? "selected-row"
                           : ""
                       } // Add "selected" class to the selected reservation row
                       onClick={() => handleSelectReservation(reservation)} // Call the handler on row click

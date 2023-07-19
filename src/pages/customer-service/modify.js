@@ -127,7 +127,7 @@ const ModifyReservationComponent = () => {
         phone: reservation.phone,
         note: noteValue === ''?null:noteValue,
       };
-
+      console.log(data);
       const response = await axios.put(
         `${PUBLIC_URL}anonymous-booking/modify`,
         data,
@@ -155,11 +155,13 @@ const ModifyReservationComponent = () => {
   const splitDateTime = (dateTime) => {
     const dateObj = new Date(dateTime);
     const date = dateObj.toISOString().split("T")[0];
+    dateObj.setHours(dateObj.getHours() - 7);
     const time = dateObj.toLocaleString("en-US", {
       hour: "numeric",
       minute: "numeric",
       hour12: true,
     });
+  
     return { date, time };
   };
   const handleCardHover = (index) => {

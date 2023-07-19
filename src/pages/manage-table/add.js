@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { PUBLIC_URL } from "../../constants/constants";
+import { DEV_URL, PUBLIC_URL } from "../../constants/constants";
 import "../../helper/StringExtension";
 
 const AddTableComponent = () => {
@@ -27,7 +27,7 @@ const AddTableComponent = () => {
       });
       let i = 0;
       const options = response.data.map((option) => ({
-        value: option.toString(),
+        value: i++,
         label: option.toString(),
       }));
 
@@ -44,18 +44,18 @@ const AddTableComponent = () => {
       const token = sessionStorage.getItem("token");
       const data = {
         tableDescription,
-        status,
+        status: parseInt(status),
         seat: parseInt(seat),
         private: privateTable,
       };
-      const response = await axios.post(`${PUBLIC_URL}/manage-table`, data, {
+      console.log(data);
+      const response = await axios.post(`${PUBLIC_URL}manage-table`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       console.log(response);
-      toast.success("Table added successfully!");
-      navigate("/manage-table");
+      toast.success("Table added successfully!");      
     } catch (error) {
       if (error.response && error.response.status === 401) {
         toast.error("Session expired! Please log in again!");
