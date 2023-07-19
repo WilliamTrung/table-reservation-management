@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import LoadingPage from "../loading";
 import { Row, Table, Button, Col } from "react-bootstrap"; // Import Bootstrap components
 
-const AssignTableComponent = ({ reservation }) => {
+const AssignTableComponent = ({ reservation, onReservationAssigned }) => {
   const [loading, setLoading] = useState(true);
   const [tables, setTables] = useState([]);
   const [selectedTable, setSelectedTable] = useState(null);

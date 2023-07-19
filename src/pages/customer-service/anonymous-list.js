@@ -213,7 +213,8 @@ const AnonymousReservationComponent = () => {
         <Col>
           {selectedReservation ? (
             <AssignTableComponent
-              reservation={selectedReservation} // Pass the selected reservation as prop
+              reservation={selectedReservation} 
+              key={selectedReservation}
               callback={handleTableSelectionCallback}
             />
           ) : (
