@@ -42,7 +42,7 @@ const AnonymousReservationComponent = () => {
       const token = sessionStorage.getItem("token");
       console.log(page);
       const response = await axios.get(
-        `${DEV_URL}anonymous-booking/current-reservations`,
+        `${PUBLIC_URL}anonymous-booking/current-reservations`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
