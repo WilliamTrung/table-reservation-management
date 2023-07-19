@@ -42,7 +42,7 @@ const AnonymousReservationComponent = () => {
       const token = sessionStorage.getItem("token");
       console.log(page);
       const response = await axios.get(
-        `${PUBLIC_URL}anonymous-booking/current-reservations`,
+        `${DEV_URL}anonymous-booking/current-reservations`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -50,6 +50,7 @@ const AnonymousReservationComponent = () => {
           params: {
             $top: pageSize,
             $skip: (page - 1) * pageSize,
+            $orderby: "Status, ReservedTime",
           },
         }
       );
